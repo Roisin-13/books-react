@@ -42,20 +42,31 @@ function BookList() {
 const Book = (props) => {
   //const { image, title, author } = props.book;
   const { image, title, author } = props;
+
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("hi :)");
+  }
+
+  const scaryClick = (author) => {
+    console.log(author);
+  }
   return (
-    <article className="book">
+    <article className="book" onMouseOver={() => {
+      console.log(title)
+
+    }}>
       <img src={image} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      <button type="button" onClick={clickHandler}>Hi :)</button>
+      <button type="button" onClick={() => scaryClick(author)}>Scary button</button>
     </article>
   );
 }
 
-// const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/91Pa-A6E0JL.__BG0,0,0,0_FMpng_AC_UL200_SR200,200_.jpg" alt="" />
 
-// const Title = () => <h1>Stardust</h1>
-
-// const Author = () => <h4 style={{ color: "#617d98", fontSize: "0.75 rem", marginTop: "0.75 rem" }}>Neil Gaiman</h4>
 
 //---render method
 ReactDOM.render(
