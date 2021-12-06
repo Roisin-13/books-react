@@ -30,7 +30,7 @@ body {
   border-radius: 1rem;
   padding: 1rem 2rem;
 }
-.book:hover {
+.book img:hover {
     transform: scale(1.1);
 }
 .book h1 {
